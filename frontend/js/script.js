@@ -1,5 +1,5 @@
-const menu = document.querySelector('.menu__body')
-const menuBtn = document.querySelector('.menu__icon')
+const menu = document.querySelector('.menu-body')
+const menuBtn = document.querySelector('.menu-icon')
 
 const body = document.body;
 
@@ -13,7 +13,7 @@ if (menu && menuBtn) {
     })
 
 
-    menu.querySelectorAll('.menu__link').forEach(link => {
+    menu.querySelectorAll('.menu-link').forEach(link => {
         link.addEventListener('click', () => {
             menu.classList.remove('active')
             menuBtn.classList.remove('active')
@@ -21,13 +21,6 @@ if (menu && menuBtn) {
         })
     })
 
-    menu.querySelectorAll('.menu__link__btn').forEach(link => {
-        link.addEventListener('click', () => {
-            menu.classList.remove('active')
-            menuBtn.classList.remove('active')
-            body.classList.remove('lock')
-        })
-    })
 }
 
 function handleTabletChange(e) {
