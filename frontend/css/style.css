@@ -248,6 +248,24 @@ body.lock {
     min-height: calc(90vh - 98px);
 }
 
+.home-page-main-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../img/hsHgReQDi50.jpg);
+    background-position: center;
+}
+
+.home-page-main-img img {
+    width: 100%;
+    object-fit: fill;
+}
+
+
 .home-page-content {
     display: flex;
     width: 100%;
@@ -296,12 +314,35 @@ body.lock {
 
 }
 
-
 .about-us-card-container p {
     margin-top: 24px;
     font-size: 16px;
 }
 
+.about-us-card-container a {
+    display: inline-block;
+    position: relative;
+}
+
+.about-us-card-container .about-us-card-link .card-body {
+    font-size: 48px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: #ffffff;
+    padding-bottom: 15%;
+}
+
+.card-title {
+    font-weight: 500;
+    -webkit-text-shadow: 0px 0px 01px rgba(0, 0, 0, 0.5);
+    -moz-text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
 
 .about-us-button-container {
     margin: 0;
@@ -343,14 +384,41 @@ body.lock {
 }
 
 
+
+.career-card-container a {
+    display: inline-block;
+    position: relative;
+}
+
+.career-card-container .career-card-link .card-body {
+    font-size: 48px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: #ffffff;
+    padding-bottom: 15%;
+}
+
+.card-title {
+    -webkit-text-shadow: 0px 0px 01px rgba(0, 0, 0, 0.5);
+    -moz-text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
 .career-button-container {
     margin: 0;
     grid-row: 4/5;
     grid-column: 7/13;
-
 }
 
-
+.career-button-container a {
+    text-decoration: none;
+    color: #000;
+}
 
 .career-card-button {
     margin: 0;
@@ -359,8 +427,6 @@ body.lock {
     border: 2px solid #000;
     border-radius: 3px;
 }
-
-
 
 .career-card-button p {
     margin: 0;
@@ -387,7 +453,7 @@ body.lock {
 }
 
 .our-works-card-container-text h2 {
-    font-weight: 700;
+    font-weight: 500;
     font-size: 36px;
 }
 
@@ -417,7 +483,7 @@ body.lock {
     text-transform: uppercase;
 }
 
-.new-header-container {
+.news-header-container {
     display: inline-block;
     margin-top: 40px;
     width: 100%;
@@ -425,6 +491,10 @@ body.lock {
     grid-column: 1/13;
     text-align: left;
     font-size: 40px;
+}
+
+.news-header-container h2 {
+    font-weight: 500;
 }
 
 .news-card-container-1 {
@@ -500,7 +570,7 @@ body.lock {
 .news-card-button {
     display: inline-block;
     text-align: center;
-    margin-top: 24px;
+
     border: 2px solid #000;
     border-radius: 3px;
 }
@@ -550,6 +620,7 @@ body.lock {
     min-height: calc(90vh - 98px);
     margin-top: 90px;
     background-image: url(../img/1c5.png);
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
