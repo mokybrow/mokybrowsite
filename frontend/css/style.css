@@ -435,7 +435,7 @@ body.lock {
     text-transform: uppercase;
 }
 
-#desktop-hide{
+#desktop-hide {
     display: none;
 }
 
@@ -454,10 +454,12 @@ body.lock {
     grid-row: 5/6;
     grid-column: 7/13;
 }
-.our-works-button-container{
+
+.our-works-button-container {
     grid-row: 5/6;
-    grid-column: 7/13; 
+    grid-column: 7/13;
 }
+
 .our-works-card-container-text h2 {
     font-weight: 500;
     font-size: 36px;
@@ -809,11 +811,11 @@ footer {
 }
 
 @media (max-width: 768px) {
-    #mobile-hide{
+    #mobile-hide {
         display: none;
     }
 
-    #desktop-hide{
+    #desktop-hide {
         display: inline-block;
     }
 
@@ -859,20 +861,22 @@ footer {
 
     }
 
-    .our-works-card-container-text-mobile{
+    .our-works-card-container-text-mobile {
         margin-top: 40px;
         grid-row: 7/8;
         grid-column: 1/13;
     }
+
     .our-works-card-container-text-mobile p {
         margin-top: 24px;
         font-size: 16px;
     }
+
     .our-works-card-container-text-mobile a {
         display: inline-block;
         position: relative;
     }
-    
+
     .our-works-card-container-text-mobile .our-works-card-link .card-body {
         font-size: 48px;
         position: absolute;
@@ -891,7 +895,7 @@ footer {
         grid-row: 8/9;
         grid-column: 1/13;
     }
-    
+
     .our-works-button-container a {
         text-decoration: none;
         color: #000;
