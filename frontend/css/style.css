@@ -797,6 +797,7 @@ footer {
         grid-gap: 24px 20px;
         align-items: stretch;
         padding: 0 4vw;
+        font-weight: 400;
         font-family: 'Inter', sans-serif;
     }
 
