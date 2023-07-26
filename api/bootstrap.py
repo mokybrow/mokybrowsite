@@ -3,13 +3,13 @@ from functools import lru_cache
 from fastapi import APIRouter, FastAPI
 
 from api.settings import get_settings
-from api.transport.handlers.states import states_router
+from api.transport.handlers.site import site_router
 
 
 def _setup_api_routers(
     api: APIRouter,
 ) -> None:
-    api.include_router(states_router, prefix='/states')
+    api.include_router(site_router, tags=["Pages"])
 
 
 @lru_cache
