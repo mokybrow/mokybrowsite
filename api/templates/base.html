@@ -5,14 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mishka games</title>
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <!-- <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css"> -->
+    <link href="{{ url_for('static', path='css/style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', path='css/reset.css') }}" rel="stylesheet">
+    {% block head %} 
+    
+    {% endblock %}
 </head>
 
 <body>
     <header class="header">
         <div class="top-left">
-            <a href="#" class="header-logo">Mishka</a>
+            <a href="/" class="header-logo">Mishka</a>
         </div>
         <div class="header-menu menu">
             <div class="menu-icon">
@@ -22,170 +27,26 @@
             </div>
             <nav class="menu-body">
                 <ul class="menu-list">
-                    <li class="menu-item" id="menu-item-transition"><a href="#" class="menu-link">О нас</a></li>
-                    <li class="menu-item" id="menu-item-transition"><a href="#" class="menu-link">Проекты</a></li>
-                    <li class="menu-item" id="menu-item-transition"><a href="#" class="menu-link">Новости</a></li>
-                    <li class="menu-item" id="menu-item-transition"><a href="#" class="menu-link">Работа</a></li>
+                    <li class="menu-item" id="menu-item-transition"><a href="about-us" class="menu-link">О нас</a></li>
+                    <li class="menu-item" id="menu-item-transition"><a href="works" class="menu-link">Проекты</a></li>
+                    <li class="menu-item" id="menu-item-transition"><a href="news" class="menu-link">Новости</a></li>
+                    <li class="menu-item" id="menu-item-transition"><a href="career" class="menu-link">Работа</a></li>
 
                 </ul>
             </nav>
         </div>
         <div class="social-icons">
-            <a href="#" class="vk-logo" id="social-logo"><img src="icons/vk.svg" alt="usr" class="social-imgs"></a>
-            <a href="#" class="tg-logo" id="social-logo"><img src="icons/telegram.svg" alt="usr"
+            <a href="#" class="vk-logo" id="social-logo"><img src="{{ url_for('static', path='icons/vk.svg') }}" alt="usr" class="social-imgs"></a>
+            <a href="#" class="tg-logo" id="social-logo"><img src="{{ url_for('static', path='icons/telegram.svg') }}" alt="usr"
                     class="social-imgs"></a>
-            <a href="#" class="dicrod-logo" id="social-logo"><img src="icons/discord.svg" alt="usr"
+            <a href="#" class="dicrod-logo" id="social-logo"><img src="{{ url_for('static', path='icons/discord.svg') }}" alt="usr"
                     class="social-imgs"></a>
         </div>
     </header>
     {% block content %} 
     
     {% endblock %}
-    <main>
-        <section class="home-page-main">
-            <div class="home-page-main-img">
-                <!-- <img src="img/hsHgReQDi50.jpg" alt=""> -->
-            </div>
-        </section>
 
-        <section class="home-page-content">
-
-            <div class="home-page-content-grid">
-                <div class="h2-header-container">
-                    <h2>Делаем увлекательные и интересные игры</h2>
-                </div>
-                <div class="p-header-description-container">
-                    <p>Наша команда верит в то, что игры уже давно перешагнули тот этап, когда были нишевым
-                        развлечением. Теперь видеоигры - это новый вид искусства.</p>
-                </div>
-                <div class="about-us-card-container">
-                    <a href="" class="about-us-card-link">
-                        <img src="img/lMcCoLtmtmU.jpg" alt="">
-                        <div class="card-body">
-                            <h5 class="card-title">О нас</h5>
-                        </div>
-                    </a>
-                    <p>О том, как мы расширяем границы творчества не только в играх, но и в цифровом искусстве в целом.
-                        История компании, наша философия, миссия и принципы.</p>
-                </div>
-                <div class="about-us-button-container">
-                    <a href="" class="about-us-button-link">
-                        <div class="about-us-button" id="main-page-button">
-                            <p>Узнать больше о компании</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="career-card-container">
-                    <a href="" class="career-card-link">
-                        <img src="img/lMcCoLtmtmU.jpg" alt="">
-                        <div class="card-body">
-                            <h5 class="card-title">Работа</h5>
-                        </div>
-                    </a>
-                    <p>Не важно, сколько вам лет и кто вы, начинающий специалист или дизайнер с 15-ти летним опытом,
-                        работа найдётся для каждого.</p>
-                </div>
-                <div class="career-button-container">
-                    <a href="" class="career-card-button-link">
-                        <div class="career-card-button" id="main-page-button">
-                            <p>Вакансии</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="our-works-card-container-img" id="mobile-hide">
-                    <img src="img/1c5.png" alt="">
-                </div>
-                <div class="our-works-card-container-text" id="mobile-hide">
-                    <h2>Наши проекты</h2>
-                    <p>Наша страсть к видеоиграм и искусству помогала нам на протяжении всего нашего пути.</p>
-                    <a href="" class="our-works-card-button-link">
-                        <div class="our-works-card-button" id="main-page-button">
-                            <p>Проекты</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="our-works-card-container-text-mobile" id="desktop-hide">
-                    <a href="" class="our-works-card-link">
-                        <img src="img/lMcCoLtmtmU.jpg" alt="">
-                        <div class="card-body">
-                            <h5 class="card-title">Наши проекты</h5>
-                        </div>
-                    </a>
-                    <p>Наша страсть к видеоиграм и искусству помогала нам на протяжении всего нашего пути.</p>
-                </div>
-
-                <div class="our-works-button-container" id="desktop-hide">
-                    <a href="" class="our-works-card-button-link">
-                        <div class="our-works-card-button" id="desktop-hide">
-                            <p>Проекты</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="news-header-container">
-                    <h2>Новости</h2>
-                </div>
-                <div class="news-card-container-1">
-                    <img src="img/c99f0fef-6503-4d88-90b3-bd094de15845.jpg" alt="">
-                    <p>Экскурсия по студии для студентов. Привлекаем будущих специалистов... </p>
-
-                </div>
-
-                <div class="news-card-button-1">
-                    <a href="" class="news-card-button-link">
-                        <div class="news-card-button" id="main-page-button">
-                            <p>Читать больше</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="news-card-container-2">
-                    <img src="img/c99f0fef-6503-4d88-90b3-bd094de15845.jpg" alt="">
-                    <p>Экскурсия по студии для студентов. Привлекаем будущих специалистов... </p>
-                </div>
-                <div class="news-card-button-2">
-                    <a href="" class="news-card-button-link">
-                        <div class="news-card-button" id="main-page-button">
-                            <p>Читать больше</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="news-card-container-3">
-                    <img src="img/c99f0fef-6503-4d88-90b3-bd094de15845.jpg" alt="">
-                    <p>Экскурсия по студии для студентов. Привлекаем будущих специалистов... </p>
-                </div>
-                <div class="news-card-button-3">
-                    <a href="" class="news-card-button-link">
-                        <div class="news-card-button" id="main-page-button">
-                            <p>Читать больше</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="read-all-news">
-                    <a href="" class="read-all-button-link">
-                        <div class="read-all-button" id="main-page-button">
-                            <p>Читать все новости</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-        </section>
-
-        <section class="contact-us">
-            <div class="contact-us-container">
-                <div class="contact-info">
-                    <h2>Контактная информация</h2>
-                    <p>Площадь Победы 1, 235 000 Калининград, Россия</p>
-                    <p>Телефон: +7 (4012) XX-XX-XX</p>
-                    <p>Telegram: @mishkastudio</p>
-                </div>
-            </div>
-        </section>
-
-    </main>
     <footer class="Footer">
         <div class="footer-grid">
             <div class="footer-logo">Mishka</div>
@@ -251,7 +112,7 @@
         </div>
 
     </footer>
-    <script src="js/script.js"></script>
+    <script src="{{ url_for('static', path='js/script.js') }}"></script>
 </body>
 
 </html>
