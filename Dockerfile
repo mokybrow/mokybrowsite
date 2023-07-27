@@ -8,7 +8,7 @@ COPY /pyproject.toml /fastapi
 RUN pip3 install poetry
 RUN poetry config virtualenvs.create false
 RUN poetry install
-RUN poetry add gunicorn
+# RUN poetry add gunicorn
 
 COPY . .
 
