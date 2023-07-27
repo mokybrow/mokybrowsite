@@ -23,11 +23,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     background-color: #FFFFFF;
     /* min-height: calc(60vh - 90px); */
     width: 80%;
     margin: 0;
-    padding: 2vh 0;
+    padding: 2vh 5vw;
     mix-blend-mode: lighten;
     color: rgba(39, 41, 43, 1);
     background-color: #fff;
