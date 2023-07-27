@@ -12,7 +12,6 @@
 .news-page-img {
     display: flex;
     align-items: center;
-    justify-content: center;
     min-width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -21,16 +20,92 @@
 }
 
 .news-header{
-    font-size: 15vw;
+    font-size: 10vw;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #FFFFFF;
-    min-height: calc(90vh - 90px);
-    width: 100vw;
+    /* min-height: calc(60vh - 90px); */
+    width: 80%;
     margin: 0;
-    padding: 0;
+    padding: 2vh 0;
     mix-blend-mode: lighten;
-    color: #000;
+    color: rgba(39, 41, 43, 1);
     background-color: #fff;
+}
+
+.news-page-content {
+    display: flex;
+    width: 100%;
+    background-color: #FFFFFF;
+}
+
+.news-page-content-grid {
+    margin-top: 5px;;
+    font-family: 'Inter', sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 24px 20px;
+    align-items: stretch;
+    padding: 0 14vw;
+    margin-bottom: 90px;
+}
+
+.news-page-content-grid img {
+    width: 100%;
+    object-fit: contain;
+}
+
+
+.news-card-container p {
+    margin-top: 24px;
+    font-size: 16px;
+}
+
+.news-card-container a {
+    text-decoration: none;
+    color: rgba(39, 41, 43, 1);
+
+}
+
+.news-page-card-button-link{
+
+    text-decoration: none;
+    color: rgba(39, 41, 43, 1);
+}
+
+.news-page-card-button {
+    margin-top: 24px;
+    display: inline-block;
+    text-align: center;
+    border: 2px solid rgba(39, 41, 43, 1);
+    border-radius: 3px;
+}
+
+.news-page-card-button p {
+    margin: 0;
+    padding: 12px 24px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+#news-page-button:hover {
+    background-color: rgba(39, 41, 43, 1);
+    color: #FFFFFF;
+    transition: all 0.2s;
+    opacity: 0.6;
+}
+
+@media (max-width: 1024px) {
+    .news-page-content-grid {
+        margin-top: 5px;;
+        font-family: 'Inter', sans-serif;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 24px 20px;
+        align-items: stretch;
+        padding: 0 14vw;
+        margin-bottom: 90px;
+    }
+
 }
