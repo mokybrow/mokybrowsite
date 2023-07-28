@@ -1,7 +1,7 @@
 from functools import lru_cache
 
-from pydantic_settings import BaseSettings
-from pydantic import FilePath
+
+from pydantic import FilePath, BaseSettings
 from starlette.templating import Jinja2Templates
 
 
