@@ -7,9 +7,13 @@ from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_asyn
 from sqlalchemy.orm import DeclarativeBase
 from api.auth.database import Base, User
 
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 #DATABASE_URL = "postgresql+asyncpg://mishka_user:QAgI0tO1dAARZiBgm9yLxlqpw6ZTESON@dpg-cj1aras07spjv9rk4d80-a.frankfurt-postgres.render.com/mishka"
-DATABASE_URL = 'postgresql+asyncpg://postgres:admin@localhost:5432/mishka'
+DATABASE_URL = os.environ.get('DATABASE_URL') 
 
 
 

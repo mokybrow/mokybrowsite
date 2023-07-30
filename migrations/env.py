@@ -2,7 +2,7 @@ from logging.config import fileConfig
 
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
-from api.auth.models import metadata
+from backend.api.auth.models import metadata
 from alembic import context
 
 import os

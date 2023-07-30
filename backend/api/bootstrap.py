@@ -28,7 +28,7 @@ def make_app() -> FastAPI:
         title=settings.project_name,
         # debug=settings.debug,
     )
-    app.mount("/static", StaticFiles(directory="api/static"), name="static")
+    app.mount("/static", StaticFiles(directory="../frontend/static"), name="static")
     _setup_api_routers(app.router)  # noqa
 
 
