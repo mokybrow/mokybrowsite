@@ -1,4 +1,5 @@
 from functools import lru_cache
+from typing import Any
 
 from fastapi import APIRouter, Depends, FastAPI
 from fastapi.staticfiles import StaticFiles
@@ -8,9 +9,10 @@ from api.database import create_db_and_tables
 from api.auth.schemas import UserCreate, UserRead, UserUpdate
 
 from api.settings import get_settings
-from api.transport.handlers.site import site_router
 from api.auth.users import auth_backend, fastapi_users
 from api.auth.users import current_active_user
+
+
 
 user_auth = APIRouter()
 
@@ -48,3 +50,5 @@ async def authenticated_route(user: User = Depends(current_active_user)):
 async def on_startup():
     # Not needed if you setup a migration system like Alembic
     await create_db_and_tables()
+
+
