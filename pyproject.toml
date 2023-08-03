@@ -13,6 +13,8 @@ alembic = "^1.11.1"
 uvicorn = {extras = ["standard"], version = "^0.23.1"}
 fastapi-users = {extras = ["sqlalchemy"], version = "^12.1.0"}
 asyncpg = "^0.28.0"
+aiosqlite = "^0.19.0"
+requests = "^2.31.0"
 
 
 [build-system]

@@ -32,3 +32,7 @@ async def home_page(request: Request):
 @site_router.get('/career')
 async def home_page(request: Request):
     return templates.TemplateResponse("career.html", {"request": request})
+
+@site_router.get('/smm')
+async def home_page(request: Request):
+    return templates.TemplateResponse("smm.html", {"request": request})
