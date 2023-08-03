@@ -33,6 +33,6 @@ async def home_page(request: Request):
 async def home_page(request: Request):
     return templates.TemplateResponse("career.html", {"request": request})
 
-@site_router.get('/smm')
+@site_router.get('/admin/login')
 async def home_page(request: Request):
     return templates.TemplateResponse("smm.html", {"request": request})
