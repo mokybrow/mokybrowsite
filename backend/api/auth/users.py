@@ -1,19 +1,13 @@
 import uuid
 from typing import Optional
 
+from api.database import User, get_user_db
 from fastapi import Depends, Request
 from fastapi_users import BaseUserManager, FastAPIUsers, UUIDIDMixin
-from fastapi_users.authentication import (
-    AuthenticationBackend,
-    BearerTransport,
-    JWTStrategy,
-    CookieTransport
-)
+from fastapi_users.authentication import (AuthenticationBackend,
+                                          BearerTransport, CookieTransport,
+                                          JWTStrategy)
 from fastapi_users.db import SQLAlchemyUserDatabase
-
-from api.database import User, get_user_db
-
-
 
 SECRET = "SECRET"
 
@@ -42,8 +36,10 @@ async def get_user_manager(user_db: SQLAlchemyUserDatabase = Depends(get_user_db
 
 cookie_transport = CookieTransport(cookie_name="mishkastudio", cookie_max_age=3600)
 
+
 def get_jwt_strategy() -> JWTStrategy:
     return JWTStrategy(secret=SECRET, lifetime_seconds=3600)
+
 
 auth_backend = AuthenticationBackend(
     name="jwt",
@@ -54,3 +50,4 @@ auth_backend = AuthenticationBackend(
 fastapi_users = FastAPIUsers[User, uuid.UUID](get_user_manager, [auth_backend])
 
 current_active_user = fastapi_users.current_user(active=True)
+current_superuser = fastapi_users.current_user(active=True, superuser=True)

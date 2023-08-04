@@ -1,0 +1,26 @@
+{% extends "base.html"%}
+
+{% block head %}
+<link href="{{ url_for('static', path='css/admin_login.css') }}" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', path='css/toast.css') }}">
+{% endblock %}
+
+
+
+{% block content %}
+
+<section class="smm-page">
+
+  <form id="formElem">
+    <input class="text-field-input" type="email" id="email" required name="username" value="user@example.com" placeholder="Почта">
+    <input class="text-field-input" type="password" id='password' name="password"  value="string" placeholder="Пароль">
+    <button class="text-field-input" type="submit">Вход</button>
+    <!-- <input class="text-field-input" type="submit"> -->
+  </form>
+  <!-- <button onclick="ExitFromSite()">Выход</button> -->
+  
+</section>
+<script src="{{ url_for('static', path='js/admin_login.js') }}"></script>
+<script src="{{ url_for('static', path='js/toast.js') }}"></script>
+
+{% endblock %}

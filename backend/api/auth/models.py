@@ -1,6 +1,7 @@
 from datetime import datetime
 
-from sqlalchemy import MetaData, Table, Column, Integer, String, TIMESTAMP, ForeignKey, JSON, UUID
+from sqlalchemy import (JSON, TIMESTAMP, UUID, Column, ForeignKey, Integer,
+                        MetaData, String, Table)
 
 metadata = MetaData()
 

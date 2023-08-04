@@ -1,0 +1,50 @@
+@font-face {
+    font-family: "Balkar";
+    src: url("../fonts/BalkaraFreeCondensed-npoekmu.me.ttf");
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter-VariableFont_slnt,wght.ttf");
+}
+
+.smm-page {
+    margin-top: 90px;
+    display: flex;
+    width: 100%;
+    min-height: calc(90vh - 90px);
+    margin-bottom: 90px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.text-field-input {
+    margin: 10px 0;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+input{
+    padding: 10px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    border-radius: 3px;
+    
+}
+
+button{
+    text-align: center;
+    align-items: center;
+    background: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+button:hover{
+    transition: all 0.2s;
+    background-color: antiquewhite;
+}

@@ -1,20 +1,20 @@
+import os
 from typing import AsyncGenerator
 
-from fastapi import Depends
-from fastapi_users.db import SQLAlchemyBaseUserTableUUID, SQLAlchemyUserDatabase
-from fastapi_users_db_sqlalchemy import SQLAlchemyBaseUserTable
-from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
-from sqlalchemy.orm import DeclarativeBase
 from api.auth.database import Base, User
-
-import os
 from dotenv import load_dotenv
+from fastapi import Depends
+from fastapi_users.db import (SQLAlchemyBaseUserTableUUID,
+                              SQLAlchemyUserDatabase)
+from fastapi_users_db_sqlalchemy import SQLAlchemyBaseUserTable
+from sqlalchemy.ext.asyncio import (AsyncSession, async_sessionmaker,
+                                    create_async_engine)
+from sqlalchemy.orm import DeclarativeBase
 
 load_dotenv()
 
-#DATABASE_URL = "postgresql+asyncpg://mishka_user:QAgI0tO1dAARZiBgm9yLxlqpw6ZTESON@dpg-cj1aras07spjv9rk4d80-a.frankfurt-postgres.render.com/mishka"
-DATABASE_URL = os.environ.get('DATABASE_URL') 
-
+# DATABASE_URL = "postgresql+asyncpg://mishka_user:QAgI0tO1dAARZiBgm9yLxlqpw6ZTESON@dpg-cj1aras07spjv9rk4d80-a.frankfurt-postgres.render.com/mishka"
+DATABASE_URL = os.environ.get("DATABASE_URL")
 
 
 engine = create_async_engine(DATABASE_URL)
