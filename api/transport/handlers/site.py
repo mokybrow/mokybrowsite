@@ -6,7 +6,7 @@ from fastapi.templating import Jinja2Templates
 site_router = APIRouter()
 
 
-templates = Jinja2Templates(directory="../frontend/templates")
+templates = Jinja2Templates(directory="frontend/templates")
 
 
 @site_router.get("/")

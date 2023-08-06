@@ -8,7 +8,7 @@ from api.auth.database import User
 admin_router = APIRouter()
 
 
-templates = Jinja2Templates(directory="../frontend/templates")
+templates = Jinja2Templates(directory="frontend/templates")
 
 
 @admin_router.get("/admin/login")
