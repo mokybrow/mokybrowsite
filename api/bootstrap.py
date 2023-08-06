@@ -34,7 +34,6 @@ def make_app() -> FastAPI:
         "http://localhost",
         "http://localhost:8000/",
         "http://localhost:8000/auth/login",
-        "http://localhost:8000/smm",
         "http://localhost:3000",
     ]
 
