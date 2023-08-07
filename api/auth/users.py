@@ -2,12 +2,14 @@ import uuid
 from typing import Optional
 
 from api.database import User, get_user_db
-from fastapi import Depends, Request
+from fastapi import BackgroundTasks, Depends, Request
 from fastapi_users import BaseUserManager, FastAPIUsers, UUIDIDMixin
 from fastapi_users.authentication import (AuthenticationBackend,
                                           BearerTransport, CookieTransport,
                                           JWTStrategy)
 from fastapi_users.db import SQLAlchemyUserDatabase
+
+from api.email.send_email import send_in_background
 
 SECRET = "SECRET"
 
@@ -18,6 +20,7 @@ class UserManager(UUIDIDMixin, BaseUserManager[User, uuid.UUID]):
 
     async def on_after_register(self, user: User, request: Optional[Request] = None):
         print(f"User {user.id} has registered.")
+        await send_in_background(email={"email":[f"{user.email}"]})
 
     async def on_after_forgot_password(
         self, user: User, token: str, request: Optional[Request] = None

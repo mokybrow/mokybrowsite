@@ -1,9 +1,12 @@
+from fastapi import APIRouter, Depends, HTTPException, Request
 
-from fastapi import APIRouter, Depends, Request
 from fastapi.templating import Jinja2Templates
+
 from api.auth.users import current_active_user, current_superuser
 
 from api.auth.database import User
+
+
 
 admin_router = APIRouter()
 
@@ -20,3 +23,5 @@ async def home_page(request: Request):
 async def authenticated_route(request: Request, user: User = Depends(current_superuser)):
     return templates.TemplateResponse("admin_dashboard.html", {"request": request, 'message': user.email})
     #return {"message": f"Hello {user.email}!"}
+
+
