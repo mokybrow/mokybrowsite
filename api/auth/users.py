@@ -20,7 +20,7 @@ class UserManager(UUIDIDMixin, BaseUserManager[User, uuid.UUID]):
 
     async def on_after_register(self, user: User, request: Optional[Request] = None):
         print(f"User {user.id} has registered.")
-        await send_in_background(email={"email":[f"{user.email}"]})
+        await send_in_background(email={"email":[f"{user.email}"], "body": {"email":f"{user.email}"}})
 
     async def on_after_forgot_password(
         self, user: User, token: str, request: Optional[Request] = None
@@ -31,7 +31,12 @@ class UserManager(UUIDIDMixin, BaseUserManager[User, uuid.UUID]):
         self, user: User, token: str, request: Optional[Request] = None
     ):
         print(f"Verification requested for user {user.id}. Verification token: {token}")
+        await send_in_background(email={"email":[f"{user.email}"], "body": {"token":f"{token}"}})
 
+    async def on_after_verify(
+        self, user: User, request: Optional[Request] = None
+    ):
+        print(f"User {user.id} has been verified")
 
 async def get_user_manager(user_db: SQLAlchemyUserDatabase = Depends(get_user_db)):
     yield UserManager(user_db)

@@ -2,7 +2,7 @@ from fastapi import BackgroundTasks, FastAPI
 from starlette.responses import JSONResponse
 from fastapi_mail import FastMail, MessageSchema, ConnectionConfig, MessageType
 from pydantic import EmailStr, BaseModel
-from typing import List
+from typing import Any, List, Dict
 import os
 from dotenv import load_dotenv
 
@@ -10,6 +10,7 @@ load_dotenv()
 
 class EmailSchema(BaseModel):
     email: List[EmailStr]
+    body: Dict[str, Any]
 
 
 conf = ConnectionConfig(
@@ -34,7 +35,7 @@ async def send_in_background(
     message = MessageSchema(
         subject="Fastapi-Mail module",
         recipients=email.get("email"),
-        template_body=email.get("email"),
+        template_body=email.get("body"),
         subtype=MessageType.html,
         )
     print(message.template_body)
